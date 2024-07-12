@@ -23,3 +23,36 @@ int	ft_list_size(t_list *begin_list)
         //return the number of elements in the list
 		return (i);
 }
+
+void put_nbr(int n)
+{
+    if(n == -2147483648)
+    {
+        write(1, "-2147483648", 11);
+        return;
+    }
+
+    if (n < 0)
+    {
+        n = -n;
+        write(1, "-", 1);
+    }
+    
+    if (n < 10)
+    {
+        n = n + '0';
+        write(1, &n, 1);
+    }
+    else
+    {
+        put_nbr(n / 10);
+        put_nbr(n % 10);
+    }
+}
+
+int main(int argc, char **argv)
+{
+    (void) argv;
+    put_nbr(argc);
+    return 0;
+}
