@@ -27,7 +27,7 @@ int	ft_count_words(char *str)
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
 	}
-	return(wc)
+	return(wc);
 }
 
 char	**ft_split(char *str)
