@@ -14,15 +14,10 @@ char *ft_strncpy(char *s1, char *s2, int n)
     s1[i] = '\0';
 	return (s1);
 }
-
-char	**ft_split(char *str)
+int	ft_count_words(char *str)
 {
 	int i = 0;
-	int j = 0;
-	int k = 0;
 	int wc = 0;
-
-    //count the number of words
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
@@ -32,6 +27,15 @@ char	**ft_split(char *str)
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
 	}
+	return(wc)
+}
+
+char	**ft_split(char *str)
+{
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	int wc = 0;
 	
     //allocate memory for the array of strings
 	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
@@ -40,7 +44,8 @@ char	**ft_split(char *str)
     //split the string into words
 	while (str[i])
 	{
-        //skip the spaces
+		int wc = ft_count_words(str);
+        //skip the spaces and find the start of the word
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
 			i++;
 		j = i;

@@ -26,7 +26,7 @@ int main(int argc, char **argv)
         while (str[i] == ' ' || str[i] == '\t') 
             i++;
         
-        // move the pointer to the first word
+        // set the start of the first word
         first_word_start = i;
 
         // move to the end of the first word
