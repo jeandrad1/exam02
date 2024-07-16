@@ -40,7 +40,7 @@ int main(int argc, char **argv)
         while (str[i] == ' ' || str[i] == '\t')
             i++;
         
-        // check if there is a next word
+        // check if there is a next word and write all the next words as requested
         if (str[i])
         {
             // write the next word
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
                     if (str[i])
                         write(1, " ", 1);
                 } 
-                // write the rest of the string
+                // write the word
                 else 
                 {
                     write(1, &str[i], 1);
