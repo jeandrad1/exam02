@@ -43,10 +43,15 @@ char *ft_itoa(int nbr)
 		result[0] = '-';
 		nbr = -nbr;
 	}
+
+	//decrement len because of the null terminator
+	len--;
+
     //convert the number to string int to char (ich +)
 	while (nbr) 
 	{
-		result[--len] = nbr % 10 + '0';
+		result[len] = nbr % 10 + '0';
+		len--;
 		nbr /= 10;
 	}
 	return result;
