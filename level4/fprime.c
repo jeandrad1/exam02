@@ -9,10 +9,13 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		i = 1;
+
+		//atoi to put the argument into a integer
 		number = atoi(argv[1]);
 		if (number == 1)
 			printf("1");
-        //Euclid Algorithm
+        //Euclid Algorithm to find the 
+		//prime factors of a number and print them
 		while (number >= i)
 		{
 			if (number % i == 0)
