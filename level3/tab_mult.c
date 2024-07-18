@@ -1,5 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
+
+//atoi to put the argument into a integer
 int	ft_atoi(char *s)
 {
 	int i = 0;
@@ -26,6 +28,7 @@ int	ft_atoi(char *s)
 	return(n * sng);
 }
 
+//putnbr to print the number
 void	ft_putnbr(int n)
 {
 	char c = 0;
@@ -41,6 +44,7 @@ void	ft_putnbr(int n)
 	}
 }
 
+//putstr to print the string
 void	ft_putstr(char *s)
 {
 	int i = 0;
@@ -55,12 +59,19 @@ int main(int argc, char **argv)
 {
 	if(argc == 2)
 	{
+		//cast the argument to a string for easier use and initialize the number i to 1
 		char *s = argv[1];
 		int i = 1;
+
+		//convert the string to a integer
 		int num = ft_atoi(s);
+
+		//initialize the result as 0 for now
 		int res = 0;
 		while (i < 10)
 		{
+			//print the multiplication table by first printing the number, then the multiplication sign,
+			//then the number to multiply by, then the equal sign, then the result
 			ft_putnbr(i);
 			write(1," x ",3);
 			ft_putstr(s);
