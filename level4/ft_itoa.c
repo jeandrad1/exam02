@@ -57,12 +57,14 @@ char *ft_itoa(int nbr)
 	return result;
 }
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int main (int argc, char **argv)
 {
 	if (argc == 2)
 	{
 		printf("%s\n", ft_itoa(atoi(argv[1])));
-		printf("%s\n", itoa(argv[1]));
 	}
 	return 0;
 }
